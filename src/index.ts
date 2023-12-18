@@ -113,6 +113,8 @@ function plugin(): PluginObj {
           // 关闭 css module
           if (!data.node.specifiers.length) {
             pluginOptions.cssModule = false
+          } else {
+            pluginOptions.cssModule = true
           }
 
             // 转换 css

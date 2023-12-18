@@ -1,6 +1,6 @@
 {
-  "version": "0.0.4",
-  "name": "@yinxulai/babel-plugin-less",
+  "version": "0.0.1",
+  "name": "@xianyue/babel-plugin-less",
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",
   "jsnext:main": "lib/esnext/index.js",
@@ -20,8 +20,8 @@
   "files": [
     "lib"
   ],
-  "homepage": "https://github.com/yinxulai/babel-plugin-less",
-  "author": "yinxulai@hotmail.com",
+  "homepage": "https://github.com/fhxy/babel-plugin-less",
+  "author": "xianyue390348@163.com",
   "description": "",
   "license": "ISC",
   "dependencies": {
