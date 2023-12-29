@@ -19,6 +19,7 @@ async function transformStyleSyntax(source: string, options: Less.Options): Prom
 interface PostCssOptions extends postcss.ProcessOptions {
   cssModule?: CssModuleOptions | boolean
   autoPrefix?: boolean
+  modifyVars?: { [key: string]: string }
 }
 
 // 处理 css module, 同时会补充浏览器前缀
@@ -58,11 +59,11 @@ async function transformStyleByPostCss(source: string, options: PostCssOptions):
 }
 
 async function transform() {
-  const { fileName, cssModule } = options
-  const dirname = path.dirname(fileName)
-  const source = readFileSync(fileName).toString()
-  const styleString = await transformStyleSyntax(source, { paths: [dirname] })
-  return await transformStyleByPostCss(styleString, { from: fileName, autoPrefix: true, cssModule })
+  const { fileName, cssModule, modifyVars } = options;
+  const dirname = path.dirname(fileName);
+  const source = readFileSync(fileName).toString();
+  const styleString = await transformStyleSyntax(source, { paths: [dirname], modifyVars });
+  return await transformStyleByPostCss(styleString, { from: fileName, autoPrefix: true, cssModule });
 }
 
 transform()

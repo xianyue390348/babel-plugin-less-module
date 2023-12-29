@@ -35,6 +35,7 @@ export interface TransformStyleResult {
 
 export interface TransformStyleOptions extends Options {
   fileName: string
+  modifyVars?: { [key: string]: string }
 }
 
 function isDevelopment(): boolean {
